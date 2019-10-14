@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html> 
+	<body> 
+		<h2>2019 Güz Döneminin ilk ödevi</h2> 
+		<br>
+		<h2>Haşim Ensar KAVAK 2018280027</h2>
+		<label for="id1">Metin kutusu 1</label> 
+		<input type='text' id='id1' onkeypress="sayiKontrol(event)" />  
+		<br> 
+		<label for="id2">Metin kutusu 2</label> 
+		<input type='text' id='id2' onkeypress="sayiKontrol(event)" />  
+		<br><br> 
+		<button type="button" onclick="topla()">Topla</button>
+		<br><br> 
+		<label for="id3">Metin kutusu 3</label> 
+		<input type='text' id='id3' />  
+		<br> 
+		<label for="id4">Metin kutusu 4</label> 
+		<input type='text' id='id4' />  
+		<br><br> 
+		<button type="button" onclick="metinler()">Yapıştır</button> 
+	</body>
+	<script>
+		function topla() {
+			var sayi1 = document.getElementById('id1').value;
+			var sayi2 = document.getElementById('id2').value;
+			sayi1=Number(sayi1);
+			sayi2=Number(sayi2);
+			var toplam = sayi1 + sayi2;
+			alert("Sonuc : "+toplam);
+			
+		}
+		
+		
+		function metinler() {
+			var metin1 = document.getElementById('id3').value;
+			var metin2 =document.getElementById('id4').value;
+			var birlestir =metin1 +" "+ metin2;
+			alert(birlestir);	
+		}
+		
+		
+		function sayiKontrol(event){
+		
+		if(event.keyCode != 8 && event.keyCode != 0 && (event.keyCode < 48 || event.keyCode > 57)){
+		
+		event.returnValue = false;
+
+		}
+		
+		}
+		
+		
+	
+	</script>
+</html>
